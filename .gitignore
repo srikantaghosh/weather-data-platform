@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Dagster
+.dagster/
+storage/
+schedules/
+
+# Environment
+.env
+*.env
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
