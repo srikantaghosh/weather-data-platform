@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: raw
+    database: WEATHER_PLATFORM
+    schema: RAW
+    tables:
+      - name: RAW_WEATHER_FORECAST
+        description: "Raw weather forecast data ingested by Dagster from Open-Meteo API"
+        columns:
+          - name: city
+            tests:
+              - not_null
+          - name: forecast_date
+            tests:
+              - not_null
+
+
+models:
+  - name: stg_weather__daily_forecast
+    description: "Cleaned daily weather forecast per city"
+    columns:
+      - name: city
+        tests:
+          - not_null
+      - name: forecast_date
+        tests:
+          - not_null
+      - name: temperature_max_celsius
+        tests:
+          - not_null
